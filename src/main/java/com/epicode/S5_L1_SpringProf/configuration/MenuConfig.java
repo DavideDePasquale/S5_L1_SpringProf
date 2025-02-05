@@ -1,13 +1,14 @@
 package com.epicode.S5_L1_SpringProf.configuration;
 
-import com.epicode.S5_L1_SpringProf.Esercizio.Drink;
-import com.epicode.S5_L1_SpringProf.Esercizio.Menu;
-import com.epicode.S5_L1_SpringProf.Esercizio.Pizza;
-import com.epicode.S5_L1_SpringProf.Esercizio.Topping;
+import com.epicode.S5_L1_SpringProf.Esercizio.*;
+import com.epicode.S5_L1_SpringProf.enumeration.Stato;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.PropertySource;
+import org.springframework.context.annotation.Scope;
 
 @Configuration
+@PropertySource("application.properties")
 public class MenuConfig {
 
     @Bean(name = "topping_tomato")
@@ -59,6 +60,24 @@ public class MenuConfig {
         menu.getMenuList().add(waterDrink());
         menu.getMenuList().add(lemonadeDrink());
         return menu;
+    }
+    @Bean(name = "tavolo")
+    public Table getTavolo(){
+        return new Table(1,4,true);
+    }
+    @Bean(name = "tavolo1")
+    public Table getTavolo1(){
+        return new Table(2,6,true);
+    }
+    @Bean(name = "tavolo2")
+    public Table getTavolo2(){
+        return new Table(3,2,true);
+    }
+
+    @Bean(name = "order1")
+    @Scope("prototype")
+    public Order getOrder1(){
+        return new Order();
     }
 
 

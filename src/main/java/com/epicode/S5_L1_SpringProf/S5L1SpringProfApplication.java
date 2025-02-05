@@ -13,15 +13,6 @@ public class S5L1SpringProfApplication {
 		SpringApplication.run(S5L1SpringProfApplication.class, args);
 
 
-		//soluzione esercizio
-		AnnotationConfigApplicationContext appContext = new AnnotationConfigApplicationContext(MenuConfig.class);
-
-		Menu menu = (Menu) appContext.getBean("menu");
-
-		menu.printMenu();
-
-		//chiuso il container
-		appContext.close();
 
 	}
 

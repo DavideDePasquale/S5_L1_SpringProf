@@ -5,10 +5,8 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.springframework.stereotype.Component;
 
-@Component
-@NoArgsConstructor
-@Data
-public class Article {
+
+public abstract class Article {
 
     protected int calories;
     protected double price;

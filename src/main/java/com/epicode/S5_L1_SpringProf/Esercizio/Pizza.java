@@ -13,6 +13,11 @@ public class Pizza extends Article{
         this.name = name;
         this.toppingList= new ArrayList<Topping>();
     }
+
+    public Pizza(int calories, double price) {
+        super(calories, price);
+    }
+
     public void addTopping(Topping t){
         this.toppingList.add(t);
     }
